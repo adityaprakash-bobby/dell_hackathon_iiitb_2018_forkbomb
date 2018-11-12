@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action = "/new_prod" method = post>
+   <fieldset>
+      <legend>Contact Form</legend>
+      {{ form.hidden_tag() }}
+
+      <div style = font-size:20px; font-weight:bold; margin-left:150px;>
+         {{ form.ram.label }}<br>
+         {{ form.ram }}
+         <br>
+
+         {{ form.gpu.label }}<br>
+         {{ form.gpu }}
+         <br>
+
+         {{ form.weight.label }}<br>
+         {{ form.weight }}
+         <br>
+
+         {{ form.typename.label }}<br>
+         {{ form.typename }}
+         <br>
+
+         {{ form.inches.label }}<br>
+         {{ form.inches }}
+         <br>
+
+         {{ form.resolution.label }}<br>
+         {{ form.resolution }}
+         <br>
+
+         {{ form.processor.label }}<br>
+         {{ form.processor }}
+         <br>
+
+         {{ form.clockspeed.label }}<br>
+         {{ form.clockspeed }}
+         <br>
+
+         {{ form.price.label }}<br>
+         {{ form.price }}
+         <br>
+
+         {{ form.submit }}
+      </div>
+
+   </fieldset>
+</form>
+{% endblock %}
