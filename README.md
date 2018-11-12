@@ -7,10 +7,12 @@
 git clone '<repo-link>'
 cd '<repo-folder>'
 pip install -r requirements.txt
-```
-```bash
+
 # run the app
 python app.py
 ```
+### Accessing the app:
+- Go to link http://localhost:5000/
+
 
 
