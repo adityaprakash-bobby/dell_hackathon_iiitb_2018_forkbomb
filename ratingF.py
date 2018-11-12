@@ -11,16 +11,20 @@ from sklearn.model_selection import train_test_split
 
 Xtrain , Xtest , Ytrain , Ytest = train_test_split(X,Y)
 
-from sklearn.preprocessing import StandardScaler
-sc = StandardScaler()
-Xtrain = sc.fit_transform(Xtrain)
-Xtest = sc.transform(Xtest)
+# from sklearn.preprocessing import StandardScaler
+# sc = StandardScaler()
+# Xtrain = sc.fit_transform(Xtrain)
+# Xtest = sc.transform(Xtest)
 
-from sklearn.linear_model import LinearRegression
-alg1 = LinearRegression()
-alg1.fit(Xtrain,Ytrain)
+# from sklearn.linear_model import LinearRegression
+# alg1 = LinearRegression()
+# alg1.fit(Xtrain,Ytrain)
+
+from sklearn.tree import DecisionTreeRegressor
+alg1 = DecisionTreeRegressor(random_state = 0)
+alg1.fit(Xtrain, Ytrain)
 
 def rating(copy):
     Xreal = [copy]
-    Xreal = sc.transform(Xreal)
-    return alg1.predict(Xreal)[0][0]
+    # Xreal = sc.transform(Xreal)
+    return alg1.predict(Xreal)[0]

@@ -32,7 +32,7 @@ def new_prod():
         # 15.6,1,1,2,1,2.2,498.9
         val = rating(copy)
         # print(val)
-        return render_template('new_prod.html', title = 'New Product', val = val, form=form)
+        return render_template('new_prod.html', title = 'New Product', val = val, form=form, req = request.args)
     return render_template('new_prod.html', title='New Product', form = form)
 
 @app.route('/revenue', methods=['GET', 'POST'])

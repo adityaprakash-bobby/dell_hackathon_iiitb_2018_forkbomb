@@ -1,56 +1,58 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="form-group">
-<form action="{{ url_for('new_prod') }}" method=GET>
-   <fieldset>
-      <legend>New Product</legend>
+  <form action="{{ url_for('new_prod') }}" method=GET>
+    <fieldset>
+      <legend>Predict User Rating</legend>
+      <p>The user rating for the specified product(laptop) configuration is predicted in the Students' user group.</p>
         {{ form.hidden_tag() }}
-
-
-        {{ form.gpu.label }}
-        {{ form.gpu }}
-
-        {{ form.weight.label }}
-        {{ form.weight }}
-
-        {{ form.inches.label }}
-        {{ form.inches }}
-
-        {{ form.resolution.label }}
-        {{ form.resolution }}
-
-        {{ form.processor.label }}
-        {{ form.processor }}
-
-        {{ form.clockspeed.label }}
-        {{ form.clockspeed }}
-
-        {{ form.price.label }}
-        {{ form.price }}
-
-        <div class="form-group">
-          {{ form.submit(class="btn btn-outline-info") }}
-        </div>
-
-   </fieldset>
-</form>
-
-{% if val %}
-  <div class="album py-5 ">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-4 box-shadow">
-            <div class="card-body">
-            <h4 class="card-title">{{ val }}</h4>
-            <p class="card-text"> {{ val }} </p>
+        <div class="form-control form-control-sm">
+          <div class="row">
+            <div class="col">
+              {{ form.gpu.label }}<br>
+              {{ form.gpu }}
+            </div>
+            <div class="col">
+              {{ form.weight.label }}
+              {{ form.weight }}
+            </div>
+            <div class="col">
+              {{ form.inches.label }}
+              {{ form.inches }}
+            </div>
+            <div class="col">
+              {{ form.resolution.label }}
+              {{ form.resolution }}
+            </div>
+            <div class="col">
+              {{ form.processor.label }}
+              {{ form.processor }}
+            </div>
+            <div class="col">
+              {{ form.clockspeed.label }}
+              {{ form.clockspeed }}
+            </div>
+            <div class="col">
+              {{ form.price.label }}
+              {{ form.price }}
+            </div>
+            <div class="col">
+              {{ form.submit(class="btn btn-outline-info") }}
             </div>
           </div>
         </div>
-      </div>
+      </fieldset>
+    </form>
+  </div>
+{% if val %}
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h4 class="display-4">Predicted User Rating for the configuration</h4>
+      <p class="lead">
+        User Rating : {{ val }}
+      </p>
     </div>
   </div>
 {% endif %}
 </div>
-
 {% endblock %}
