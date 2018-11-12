@@ -19,17 +19,19 @@ def forecasting():
 @app.route('/new_prod', methods=['GET', 'POST'])
 def new_prod():
     form = Searchform()
-    inches = request.args.get('inches')
-    gpu = request.args.get('gpu')
-    resolution = request.args.get('resolution')
-    processor = request.args.get('processor')
-    weight = request.args.get('weight')
-    price = request.args.get('price')
-    clockspeed = request.args.get('clockspeed')
-    if request.method == 'GET':
-        copy = [15.6,1,1,2,1,2.2,498.9]
+
+    if request.method == 'GET' and request.args.get('submit') == 'Find':
+        inches = request.args.get('inches')
+        gpu = request.args.get('gpu')
+        resolution = request.args.get('resolution')
+        processor = request.args.get('processor')
+        weight = request.args.get('weight')
+        price = request.args.get('price')
+        clockspeed = request.args.get('clockspeed')
+        copy = [ inches, gpu, processor, resolution, weight, clockspeed, price]
+        # 15.6,1,1,2,1,2.2,498.9
         val = rating(copy)
-        print(val)
+        # print(val)
         return render_template('new_prod.html', title = 'New Product', val = val, form=form)
     return render_template('new_prod.html', title='New Product', form = form)
 

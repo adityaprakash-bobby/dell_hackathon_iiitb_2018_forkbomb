@@ -23,4 +23,4 @@ alg1.fit(Xtrain,Ytrain)
 def rating(copy):
     Xreal = [copy]
     Xreal = sc.transform(Xreal)
-    return alg1.predict(Xreal)
+    return alg1.predict(Xreal)[0][0]
