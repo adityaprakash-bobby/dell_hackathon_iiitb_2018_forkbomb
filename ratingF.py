@@ -24,6 +24,3 @@ def rating(copy):
     Xreal = [copy]
     Xreal = sc.transform(Xreal)
     return alg1.predict(Xreal)
-
-copy = [15.6,1,1,2,1,2.2,498.9]
-rating(copy)
