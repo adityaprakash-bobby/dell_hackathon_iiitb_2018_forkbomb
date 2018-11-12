@@ -1,12 +1,33 @@
 {% extends "layout.html" %}
 {% block content %}
-<h1>Total_revenue_Ind</h1>
-{{ data }}
-<h1>Total_revenue_Aus</h1>
-{{ data1 }}
-<h1>Total_revenue_Eng</h1>
-{{ data2 }}
-<h1>Total_revenue_Canada</h1>
-{{ data3 }}
-
+<div class="form-group">
+  <form action="{{ url_for('revenue') }}" method=GET>
+    <fieldset>
+      <legend>Revenue Opportunities (Country-wise)</legend>
+        {{ form.hidden_tag() }}
+        <div class="form-control form-control-sm">
+          <div class="row">
+            <div class="col">
+              {{ form.country.label }}<br>
+              {{ form.country }}
+            </div>
+            <div class="col">
+              {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+          </div>
+        </div>
+      </div>
+  {% if data %}
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h4 class="display-6">Revenue Opportunities({{country}}):</h4>
+      <p class="lead">
+        Training Score : {{data[0]}}<br>
+        Testing Score : {{data[1]}}<br>
+        Number of Users that have taken warranty service : {{data[2]}}<br>
+        Total Revenue : {{data[3]}}<br>
+      </p>
+    </div>
+  </div>
+  {% endif %}
 {% endblock %}

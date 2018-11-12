@@ -11,3 +11,7 @@ class Searchform(FlaskForm):
     weight = SelectField('Weight', choices = [(1.8, '1.8kg'), (2.3, '2.3kg'), (2.7, '2.7kg')])
     price = SelectField('Price', choices = [(300, '$300'),(460, '$460'),(350, '$350'),(500, '$500'), (750, '$750'), (1000, '$1000')])
     submit = SubmitField('Find')
+
+class CountryForm(FlaskForm):
+    country = SelectField('Country', choices = [('uk', 'United Kingdom'), ('india','India'), ('japan','Japan'), ('us', 'United States')])
+    submit = SubmitField('Choose')

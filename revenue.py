@@ -51,8 +51,7 @@ for i in range (0,s3):
     Total_revenue_Eng += XpredictedEng[i]*ZEng[i]
 for i in range (0,s4):
     Total_revenue_Canada += XpredictedCanada[i]*ZCanada[i]
-
-# print("Total_revenue_Ind " , Total_revenue_Ind)
-# print("Total_revenue_Aus " , Total_revenue_Aus)
-# print("Total_revenue_Eng " , Total_revenue_Eng)
-# print("Total_revenue_Canada " , Total_revenue_Canada)
+print("Total_revenue_Ind " , Total_revenue_Ind)
+print("Total_revenue_Aus " , Total_revenue_Aus)
+print("Total_revenue_Eng " , Total_revenue_Eng)
+print("Total_revenue_Canada " , Total_revenue_Canada)
