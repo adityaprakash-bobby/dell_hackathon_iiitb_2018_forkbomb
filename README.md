@@ -1,7 +1,7 @@
 # dell_hackathon_iiitb_2018_forkbomb
----
+
 ### Problem Statement -> Services - Asset and Entightlement Invemtory
----
+
 ### Setup:
 ```bash
 git clone '<repo-link>'
@@ -13,6 +13,8 @@ python app.py
 ```
 ### Accessing the app:
 - Go to link http://localhost:5000/
+
+## _*The original project is hosted and the link has been provided in description*_
 
 
 
